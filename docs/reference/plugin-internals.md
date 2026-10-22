@@ -579,9 +579,9 @@ proves entry points and usage crediting.
 ## dotenv CLI
 
 The `dotenv` plugin registers dotenv CLI usage for plugin discovery and Knip
-migration. The shared script analyzer already unwraps `dotenv` and `dotenvx`
-commands; binary resolution maps them to `dotenv-cli` and
-`@dotenvx/dotenvx`. Plugin activation requires one of those packages as a
+migration. The shared script analyzer unwraps `dotenv` as an env wrapper and
+`dotenvx run --` as a command wrapper. Binary resolution maps the two binaries
+to `dotenv-cli` and `@dotenvx/dotenvx`. Plugin activation requires one of those packages as a
 dependency or script evidence. `.env` files are not plugin config or entry
 points, and the `dotenv` runtime library is credited only when source or a
 supported Node preload actually uses it.
